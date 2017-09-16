@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="kor">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script type="text/javascript">
+		var k=0;
+           function mark() {
+			var mun1 = document.getElementsByName("choice1");
+			var mun2 = document.getElementsByName("choice2");
+			var mun3 = document.getElementsByName("choice3");
+			var me = document.getElementById("me");
+
+			if(mun1[1].checked){
+				k += 1;
+			}
+			if(mun2[3].checked){
+				k += 1;
+			}
+			if(mun3[0].checked){
+				k += 1;
+			}
+			me.value=k;
+			k = 0;
+		   }
+		   function re(){
+		       var me = document.getElementById("me");
+		       
+			me.value=0;
+		   }
+    </script>	
+ 
+</head>
+<body>
+    
+    	<h2><center>문 제</center></h2>
+	<HR color="red">
+      <form>
+		 <br><br>1. 브라우저에게 문서의 유형을 알려주는 것으로, HTML5의 문서 유형을 선언하는 html태그는? <br><br>
+         <input type="radio" name="choice1" value="2"> !HTML5
+         <input type="radio" name="choice1" value="1"> !DOCTYPE
+		 <input type="radio" name="choice1" value="2"> !DOCTYPE5
+		 <input type="radio" name="choice1" value="2"> !HTML5-DOCTYPE
+
+		 <br><br>2. input 태그의 속성 중 입력 요소에 힌트를 미리 표시하는 속성은?<br><br>
+		 <input type="radio" name="choice2" value="2"> autocomplete
+         <input type="radio" name="choice2" value="2"> autofocus
+		 <input type="radio" name="choice2" value="2"> pattern
+		 <input type="radio" name="choice2" value="1"> placeholder
+
+		 <br><br>3. input 태그의 타입 중 details 태그와 함께 사용되기도 하며, 주로 세부 사항의 요약을 표시하는 태그는?<br><br>
+		 <input type="radio" name="choice3" value="1"> summary
+         <input type="radio" name="choice3" value="2"> fieldset
+		 <input type="radio" name="choice3" value="2"> legend
+		 <input type="radio" name="choice3" value="2"> meter
+
+         <br><br><input type="button" value="채점" onclick="mark()">
+		 <input type="reset" value="리셋" onclick="re()">
+		<meter id="me" min="0" max="3" value="0" col></meter>
+      </form>
+</body>
+</html>

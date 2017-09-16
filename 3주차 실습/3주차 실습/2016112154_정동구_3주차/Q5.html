@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html lang="kor">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #map
+        {
+          visibility:hidden;
+        }
+    </style>
+    <script language="JavaScript">
+    
+            function div_OnOff(v, id) {
+                // 라디오 버튼 value 값 조건 비교
+                var m = document.getElementById('map');
+                if (v == "1") {
+                    m.style.visibility = "visible"; // 보여줌
+                } else {
+                    m.style.visibility = "hidden"; // 숨김
+                }
+            }
+        
+    </script>
+</head>
+<body>
+    <input type="radio" name="show" value="2" onclick="div_OnOff(value,'map');">숨기기
+    <input type="radio" name="show" value="1" onclick="div_OnOff(value,'map');">보이기
+    <div id="map">
+        <img src="map.jpg" />
+    </div>
+</body>
+</html>

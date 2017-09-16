@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="utf-8">
+    <title>프롬프트 대화상자+location</title>
+    <script language="JavaScript">
+      function getAdress()
+      {
+        var input=prompt("이동할 웹사이트 주소를 입력하세요.")
+        location.replace(input);
+      }
+    </script>
+  </head>
+  <body>
+
+    <h3>다음 이동버튼을 클릭하여 이동할 웹사이트 주소를 입력하세요.</h3>
+
+    <form>
+      <input type="button" value="이동" onClick="getAdress()"><br/>
+        
+    </form>
+      
+
+  </body>
+</html>
