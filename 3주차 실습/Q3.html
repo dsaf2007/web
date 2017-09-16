@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+      div {float:left; margin:10px; width:100%; height:149px;
+          border:1px solid gray; }
+      #item1, #item2, #item3 {width:67px;  font-weight:bold;}
+
+
+      p, pre {font-weight:bold; text-align:center;}
+        #fruit{text-align:left}
+</style>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+    var name;
+    function dragover(wpevent) //요소가 드롭장소 위에 있을 때
+    { wpevent.preventDefault();}//드롭 허용 금지 취소
+    function dragstart(wpevent,str)//요소가 드래그 하기 시작할 때
+    { wpevent.dataTransfer.effectAllowed='move';//허용되는 실행 형식
+    wpevent.dataTransfer.setData("Text",wpevent.target.id);
+      name=str;}//주어진 포맷으로 데이터 설정
+    function dragend(wpevent)//드래그가 끝날 때
+    { wpevent.dataTransfer.clearData("Text");
+    }//주어진 포맷의 데이터 삭제
+    function drop(wpevent)
+    { wpevent.preventDefault();
+  var item=wpevent.dataTransfer.getData("Text");
+  wpevent.target.appendChild(document.getElementById(item));
+  wpevent.stopPropagation();
+
+
+    if(item=="item1")
+    {
+      document.getElementById('fruit').innerHTML="사과를 옮겼습니다.";
+    }
+    if(item=="item2")
+    {
+      document.getElementById("fruit").innerHTML="체리를 옮겼습니다.";
+    }
+    if(item=="item3")
+    {
+      document.getElementById("fruit").innerHTML="포도를 옮겼습니다.";
+    }
+  }
+
+  </script>
+    <h2>과일 목록</h2>
+  <div id="div1" ondrop="drop(event)" ondragover="dragover(event)">
+    <img id="item1"src="apple.jpg" alt="이미지없음" draggable="true" ondragstart="dragstart(event)"
+  ondragend="dragend(event)"/>
+  <img id="item2"src="cherry.jpg" alt="이미지없음"draggable="true" ondragstart="dragstart(event)"
+  ondragend="dragend(event)"/>
+  <img id="item3"src="grape.jpg" alt="이미지없음"draggable="true" ondragstart="dragstart(event)"
+  ondragend="dragend(event)"/>
+  </div>
+<div style="border-style:none;height:50px;">
+  <h2>장바구니</h2>
+</div>
+
+  <div id="div2" ondrop="drop(event)" ondragover="dragover(event)"> </div>
+  <p id="fruit"></p>
+</body>
+</html>
