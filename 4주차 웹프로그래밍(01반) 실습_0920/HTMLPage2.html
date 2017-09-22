@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="kor">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.1.1.js" script type="text/javascript"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            var size = $("#box").width();
+
+            function sizeup() {
+                $("#box").width(size * 1.1);
+                size = size * 1.1;
+            }
+            function sizedown() {
+                $("#box").width(size * 0.9);
+                size = size * 0.9;
+            }
+            $("#up").click(function () {
+                sizeup();
+            });
+            $("#down").click(function () {
+                sizedown();
+            });
+        })
+    </script>
+    <style>
+        #box
+        {
+           width:100px;
+           height:100px;
+           background-color:blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+  <button id="up" >상자 확대</button>
+    <button id="down">상자 축소</button>
+
+ 
+</body>
+</html>
